@@ -231,6 +231,17 @@ module Patron
       request(:delete, url, headers)
     end
 
+    # Same as #get but performs a MKCOL request.
+    #
+    # Notice: this method doesn't accept any `data` argument
+    #
+    # @param url[String] the URL to fetch
+    # @param headers[Hash] the hash of header keys to values
+    # @return [Patron::Response]
+    def mkcol(url, headers = {})
+      request(:mkcol, url, headers)
+    end
+
     # Uploads the passed `data` to the specified `url` using an HTTP PUT. Note that
     # unline ++post++, a Hash is not accepted as the ++data++ argument.
     #

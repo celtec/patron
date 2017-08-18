@@ -294,6 +294,12 @@ describe Patron::Session do
     expect(body.request_method).to be == "PROPFIND"
   end
 
+  it "should send a mkcol request with :mkcol" do
+    response = @session.mkcol("/test")
+    body = YAML::load(response.body)
+    expect(body.request_method).to be == "MKCOL"
+  end
+
   it "should upload data with :patch" do
     data = "upload data"
     response = @session.patch("/testpatch", data)

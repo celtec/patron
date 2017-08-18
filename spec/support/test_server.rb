@@ -75,6 +75,10 @@ class TestServlet < HTTPServlet::AbstractServlet
   def do_PROPFIND(req,res)
     respond_with(:PROPFIND, req, res)
   end
+
+  def do_MKCOL(req,res)
+    respond_with(:MKCOL, req, res)
+  end
 end
 
 class GzipServlet < HTTPServlet::AbstractServlet
